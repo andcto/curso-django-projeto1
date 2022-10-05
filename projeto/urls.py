@@ -13,9 +13,20 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from http import HTTPStatus
+
 from django.contrib import admin
+from django.http import HttpResponse
 from django.urls import path
+
+
+# HTTP REQUEST
+def my_view(request):
+    return HttpResponse('Genshin Impact')
+    # return HTTP response
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', my_view)
 ]
